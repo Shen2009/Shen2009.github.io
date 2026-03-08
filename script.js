@@ -1,6 +1,6 @@
-// hoa đào rơi
+// hoa đào 3D
 
-for(let i=0;i<40;i++){
+for(let i=0;i<50;i++){
 
 let petal=document.createElement("div")
 
@@ -16,26 +16,39 @@ document.body.appendChild(petal)
 
 }
 
-// mở quà
+// mở hộp quà
 
-let btn=document.getElementById("giftBtn")
+let gift=document.getElementById("giftBox")
+let card=document.getElementById("card")
+let music=document.getElementById("music")
 
-btn.onclick=function(){
+gift.onclick=function(){
 
-document.getElementById("gift").style.display="block"
+gift.classList.add("open")
 
-document.getElementById("music").play()
+setTimeout(()=>{
+
+card.style.display="block"
+music.play()
+
+},800)
+
+}
+
+// mở thiệp
+
+card.onclick=function(){
+
+card.classList.toggle("open")
 
 }
 
 // pháo hoa
 
 const canvas=document.getElementById("fireworks")
-
 const ctx=canvas.getContext("2d")
 
 canvas.width=window.innerWidth
-
 canvas.height=window.innerHeight
 
 let particles=[]
@@ -43,22 +56,17 @@ let particles=[]
 function firework(){
 
 let x=Math.random()*canvas.width
-
 let y=Math.random()*canvas.height/2
 
-for(let i=0;i<100;i++){
+for(let i=0;i<120;i++){
 
 particles.push({
 
 x:x,
-
 y:y,
-
 angle:Math.random()*Math.PI*2,
-
-speed:Math.random()*6+2,
-
-life:100
+speed:Math.random()*7+2,
+life:120
 
 })
 
@@ -68,20 +76,17 @@ life:100
 
 function update(){
 
-ctx.fillStyle="rgba(0,0,0,0.1)"
-
+ctx.fillStyle="rgba(0,0,0,0.12)"
 ctx.fillRect(0,0,canvas.width,canvas.height)
 
 particles.forEach((p,i)=>{
 
 p.x+=Math.cos(p.angle)*p.speed
-
 p.y+=Math.sin(p.angle)*p.speed
 
 p.life--
 
 ctx.fillStyle=`hsl(${Math.random()*360},100%,60%)`
-
 ctx.fillRect(p.x,p.y,3,3)
 
 if(p.life<=0)particles.splice(i,1)
@@ -92,6 +97,6 @@ requestAnimationFrame(update)
 
 }
 
-setInterval(firework,1500)
+setInterval(firework,1400)
 
 update()
