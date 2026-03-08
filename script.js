@@ -1,4 +1,4 @@
-// hoa đào 3D
+// hoa đào
 
 for(let i=0;i<50;i++){
 
@@ -29,6 +29,7 @@ gift.classList.add("open")
 setTimeout(()=>{
 
 card.style.display="block"
+
 music.play()
 
 },800)

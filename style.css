@@ -7,38 +7,43 @@ font-family:Segoe UI;
 
 body{
 height:100vh;
-overflow:hidden;
-background:black;
+margin:0;
 display:flex;
 justify-content:center;
 align-items:center;
+background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fbc2eb);
+overflow:hidden;
+text-align:center;
 }
 
-/* parallax background */
+/* background parallax */
 
 .parallax{
 position:absolute;
 width:120%;
 height:120%;
-background:
-linear-gradient(120deg,#ff9a9e,#fad0c4,#fbc2eb);
+background:linear-gradient(120deg,#ff9a9e,#fad0c4,#fbc2eb);
 animation:bgMove 20s infinite alternate;
 z-index:-2;
 }
 
 @keyframes bgMove{
+
 0%{transform:translate(-5%,-5%)}
 100%{transform:translate(5%,5%)}
+
 }
 
-/* center */
+/* center layout */
 
 .center{
-text-align:center;
+max-width:800px;
+width:90%;
+margin:auto;
 z-index:5;
 }
 
-/* 3D gift box */
+/* gift box */
 
 .giftBox{
 width:120px;
@@ -70,7 +75,7 @@ transition:1s;
 transform:translateY(-80px) rotate(-20deg);
 }
 
-/* card 3D */
+/* card */
 
 .card3D{
 width:320px;
@@ -118,33 +123,33 @@ padding:20px;
 }
 
 h1{
-margin-bottom:10px;
+font-size:70px;
+text-shadow:0 0 20px rgba(255,255,255,0.8),
+0 0 40px rgba(255,105,180,0.8);
+}
+
+p{
+font-size:22px;
+margin-top:20px;
 }
 
 /* petals */
 
 .petal{
-
 position:absolute;
 font-size:26px;
 animation:fall linear infinite;
-
 }
 
 @keyframes fall{
 
-0%{
-transform:translateY(-10vh) rotate(0deg)
-}
+0%{transform:translateY(-10vh) rotate(0deg)}
 
-100%{
-transform:translateY(110vh) rotate(360deg)
-}
+100%{transform:translateY(110vh) rotate(360deg)}
 
 }
 
 canvas{
-
 position:absolute;
 top:0;
 left:0;
@@ -157,6 +162,14 @@ left:0;
 .card3D{
 width:260px;
 height:170px;
+}
+
+h1{
+font-size:45px;
+}
+
+p{
+font-size:18px;
 }
 
 }
