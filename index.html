@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
+
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Chúc mừng 8/3</title>
 
 <link rel="stylesheet" href="style.css">
@@ -12,58 +15,41 @@
 
 <canvas id="fireworks"></canvas>
 
-<div class="card">
+<div class="container">
 
-<h1>💐 Chúc mừng 8/3 💐</h1>
+<div class="card" id="card">
+
+<h1>💐 Happy Women's Day 💐</h1>
 
 <p>
 Chúc một nửa thế giới luôn xinh đẹp 🌸  
-hạnh phúc 💖  
-và tràn đầy yêu thương.
+hạnh phúc 💖 và tràn đầy yêu thương.
 </p>
 
-<p style="margin-top:20px">
-Happy Women's Day ✨
+<button id="giftBtn">🎁 Mở quà</button>
+
+</div>
+
+<div class="gift" id="gift">
+
+<h2>💌 Lời chúc</h2>
+
+<p>
+Chúc bạn luôn rạng rỡ như hoa đào mùa xuân 🌸  
+luôn được yêu thương và thật nhiều niềm vui.
 </p>
 
 </div>
 
-<script>
+</div>
 
-/* hearts */
+<audio id="music" loop>
 
-for(let i=0;i<40;i++){
-let h=document.createElement("div")
-h.className="heart"
-h.innerHTML="💖"
-h.style.left=Math.random()*100+"vw"
-h.style.animationDuration=5+Math.random()*5+"s"
-document.body.appendChild(h)
-}
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_2c7e6b3a5b.mp3" type="audio/mp3">
 
-/* flowers */
+</audio>
 
-for(let i=0;i<30;i++){
-let f=document.createElement("div")
-f.className="flower"
-f.innerHTML="🌸"
-f.style.left=Math.random()*100+"vw"
-f.style.animationDuration=8+Math.random()*6+"s"
-document.body.appendChild(f)
-}
-
-/* balloons */
-
-for(let i=0;i<15;i++){
-let b=document.createElement("div")
-b.className="balloon"
-b.style.left=Math.random()*100+"vw"
-b.style.background=`hsl(${Math.random()*360},70%,60%)`
-b.style.animationDuration=6+Math.random()*6+"s"
-document.body.appendChild(b)
-}
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>

@@ -2,7 +2,7 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
+font-family:Segoe UI;
 }
 
 body{
@@ -12,91 +12,130 @@ display:flex;
 justify-content:center;
 align-items:center;
 overflow:hidden;
+text-align:center;
 }
 
-/* card glass effect */
+.container{
+z-index:2;
+}
 
 .card{
-background:rgba(255,255,255,0.15);
+
+background:rgba(255,255,255,.15);
 backdrop-filter:blur(15px);
 padding:60px;
 border-radius:20px;
-text-align:center;
 color:white;
-box-shadow:0 10px 40px rgba(0,0,0,0.2);
+box-shadow:0 10px 40px rgba(0,0,0,.2);
 animation:fade 2s ease;
 }
 
-@keyframes fade{
-from{opacity:0; transform:scale(.8)}
-to{opacity:1; transform:scale(1)}
-}
-
 h1{
-font-size:70px;
+font-size:50px;
 margin-bottom:20px;
-text-shadow:0 0 25px white;
 }
 
 p{
-font-size:24px;
-line-height:1.6;
-}
-
-/* hearts */
-
-.heart{
-position:absolute;
 font-size:20px;
-animation:float 8s linear infinite;
+margin-bottom:20px;
 }
 
-@keyframes float{
-0%{transform:translateY(100vh); opacity:1}
-100%{transform:translateY(-10vh); opacity:0}
+button{
+
+padding:12px 25px;
+border:none;
+border-radius:10px;
+background:#ff4d6d;
+color:white;
+font-size:18px;
+cursor:pointer;
 }
 
-/* flowers */
+button:hover{
 
-.flower{
-position:absolute;
-font-size:25px;
-animation:fall 12s linear infinite;
+background:#ff2c55;
+
 }
 
-@keyframes fall{
-0%{transform:translateY(-10vh) rotate(0)}
-100%{transform:translateY(110vh) rotate(360deg)}
-}
+.gift{
 
-/* balloons */
-
-.balloon{
-position:absolute;
-bottom:-200px;
-width:60px;
-height:80px;
-border-radius:50%;
-animation:rise 10s infinite;
-}
-
-.balloon:after{
-content:'';
-position:absolute;
-width:2px;
-height:80px;
+display:none;
+margin-top:30px;
 background:white;
-left:50%;
-top:80px;
+padding:30px;
+border-radius:15px;
+color:#333;
+animation:openGift 1s ease;
 }
 
-@keyframes rise{
-0%{transform:translateY(0)}
-100%{transform:translateY(-120vh)}
+@keyframes openGift{
+
+from{transform:scale(0)}
+to{transform:scale(1)}
+
+}
+
+@keyframes fade{
+
+from{opacity:0;transform:scale(.8)}
+to{opacity:1;transform:scale(1)}
+
 }
 
 canvas{
+
 position:absolute;
 top:0;
 left:0;
+
+}
+
+/* hoa đào */
+
+.petal{
+
+position:absolute;
+font-size:24px;
+animation:fall linear infinite;
+
+}
+
+@keyframes fall{
+
+0%{
+
+transform:translateY(-10vh) rotate(0deg);
+
+}
+
+100%{
+
+transform:translateY(110vh) rotate(360deg);
+
+}
+
+}
+
+/* mobile */
+
+@media(max-width:768px){
+
+.card{
+
+padding:40px;
+
+}
+
+h1{
+
+font-size:32px;
+
+}
+
+p{
+
+font-size:18px;
+
+}
+
 }
